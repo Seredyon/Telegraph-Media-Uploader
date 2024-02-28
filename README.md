@@ -1,6 +1,6 @@
-```markdown
+
 [![Telegraph Uploader](https://imgur.com/a/qfCV7UB)](https://github.com/Seredyon/Telegraph-Media-Uploader)
-```
+
 
 # Telegraph Uploader
 
