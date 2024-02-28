@@ -1,6 +1,6 @@
 # Telegraph Uploader
 
-This is a Kivy application that allows users to upload files to Telegraph, a platform for creating richly formatted posts. The application supports PNG, GIF, JPG, and JPEG files.
+This is a Kivy application that allows users to upload files to Telegraph, a platform for creating richly formatted posts. The application supports PNG, GIF, JPG, WEBM and JPEG files.
 
 ## Features
 
