@@ -1,0 +1,4 @@
+Kivy==2.3.0
+kivymd==0.104.2
+Pillow==10.1.0
+telegraph==2.2.0
