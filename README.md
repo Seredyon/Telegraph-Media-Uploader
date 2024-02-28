@@ -49,8 +49,6 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
-## Contact
-
 <h2 align="center">Contact me 📫</h2>
 
 <p align="center">
