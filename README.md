@@ -1,5 +1,5 @@
 
-<img src="https://imgur.com/a/qfCV7UB" alt="Telegraph Media Uploader">
+<img src="https://imgur.com/a/qfCV7UB.png" alt="Telegraph Media Uploader">
 
 
 # Telegraph Media Uploader
