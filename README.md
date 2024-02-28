@@ -2,11 +2,12 @@
 
 This is a Kivy application that allows users to upload files to Telegraph, a platform for creating richly formatted posts. The application supports PNG, GIF, JPG, WEBM and JPEG files.
 
-## Features
+### Features
 
-- Upload files to Telegraph
-- Customize article settings (title, author, link)
-- Switch between light and dark theme
+- **File Upload**: Upload images from a specified directory to Telegraph.
+- **Article Settings**: Customize article title, author name, and link.
+- **Progress Tracking**: Monitor upload progress with a progress bar.
+- **Dark/Light Theme**: Toggle between dark and light themes.
 
 ## Getting Started
 
