@@ -143,8 +143,6 @@ ScreenManager:
                 active: app.theme_cls.theme_style == "Dark"
                 on_active: app.change_theme(self.active)
 
-
-
 <UploadScreen>:
     name: 'upload'
     MDBoxLayout:
@@ -202,7 +200,6 @@ ScreenManager:
                 value: 0
                 pos_hint: {"center_x": .5}
 
-
 <ArticleScreen>:
     name: 'article'
     MDBoxLayout:
@@ -255,8 +252,22 @@ ScreenManager:
             self.show_error_popup("Invalid Directory", "The directory path is invalid.")
             return
 
+        # List of allowed extensions
+        allowed_extensions = [".png", ".gif", ".jpg", ".jpeg", ".webp"]
+
+        # Get list of files in the directory
+        files = os.listdir(directory_path)
+
+        # Filter out non-allowed files
+        allowed_files = [file for file in files if os.path.splitext(file)[1].lower() in allowed_extensions]
+
+        # Check if there are any allowed files to upload
+        if not allowed_files:
+            self.show_error_popup("No Allowed Files", "There are no allowed files in the directory to upload.")
+            return
+
         # Create a new thread for uploading files
-        upload_thread = Thread(target=self.upload, args=(directory_path,))
+        upload_thread = Thread(target=self.upload, args=(directory_path, allowed_files))
         upload_thread.start()
 
     def change_theme(self, switch_active):
@@ -326,19 +337,7 @@ ScreenManager:
         self.root.current = "settings"
         self.show_enter_title_popup()
 
-    def upload(self, directory_path):
-        # Validate directory path
-        if not os.path.isdir(directory_path):
-            Clock.schedule_once(lambda dt: self.show_error_popup("Invalid Directory", "The directory path is invalid."))
-            return
-
-        # Check if article title is provided
-        if not self.article_settings["title"]:
-            error_message = "Article title is required. Please go to settings to enter it."
-            self.show_error_popup("Title Error", error_message)
-            self.go_to_settings_screen()
-            return
-
+    def upload(self, directory_path, allowed_files):
         telegraph = Telegraph()
         try:
             telegraph.create_account(short_name=self.article_settings["title"])
@@ -347,14 +346,15 @@ ScreenManager:
             Clock.schedule_once(lambda dt: self.show_error_popup("Telegraph Account Creation Error", error_message))
             return
 
-        total_files = len(glob.glob(os.path.join(directory_path, "*")))
+        total_files = len(allowed_files)
         uploaded_files = 0
         image_urls = []
 
-        for file in glob.glob(os.path.join(directory_path, "*")):
-            file = convert_file_to_image(file)
+        for file in allowed_files:
+            file_path = os.path.join(directory_path, file)
+            file_path = convert_file_to_image(file_path)
             try:
-                upload_file_response = upload_file(file)
+                upload_file_response = upload_file(file_path)
                 if upload_file_response:
                     uploaded_files += 1
                     image_urls.append(upload_file_response[0])
@@ -371,7 +371,7 @@ ScreenManager:
         # If all files are uploaded, finish the upload
         if uploaded_files == total_files:
             # Set up article title, author, and hyperlink
-            title = self.article_settings["title"] if self.article_settings["title"] else 'My Uploaded Images'
+            title = self.article_settings["title"] if self.article_settings["title"] else 'My Uploaded Media'
             author_name = self.article_settings["author"] if self.article_settings["author"] else ''
             author_url = self.article_settings["link"] if self.article_settings["link"] else ''
 
@@ -411,4 +411,4 @@ ScreenManager:
         popup.open()
 
 if __name__ == "__main__":
-    MainApp().run()
+    MainApp().run()        
