@@ -3,7 +3,6 @@ from kivy.uix.screenmanager import Screen
 from kivy.uix.popup import Popup
 from kivy.uix.label import Label
 import os
-import glob
 from telegraph import Telegraph, exceptions, upload_file
 from PIL import Image
 from threading import Thread
@@ -13,7 +12,7 @@ from kivy.uix.button import Button
 from kivy.core.clipboard import Clipboard
 from kivymd.app import MDApp
 from kivy.uix.boxlayout import BoxLayout
-
+import natsort
 def convert_file_to_image(file):
     ext = os.path.splitext(file)[1].lower()
     if ext not in [".png", ".gif", ".jpg", ".jpeg"]:
@@ -260,6 +259,7 @@ ScreenManager:
 
         # Filter out non-allowed files
         allowed_files = [file for file in files if os.path.splitext(file)[1].lower() in allowed_extensions]
+        allowed_files = natsort.natsorted(allowed_files, alg=natsort.ns.IGNORECASE)
 
         # Check if there are any allowed files to upload
         if not allowed_files:
@@ -395,7 +395,7 @@ ScreenManager:
             print(f'Upload Complete. Article URL: {article_url}')
             # Change to article screen after 100% upload
             Clock.schedule_once(lambda dt: self.change_to_article_screen())
-
+    @mainthread
     def show_error_popup(self, title, message):
         def close_popup(instance):
             popup.dismiss()
@@ -411,4 +411,4 @@ ScreenManager:
         popup.open()
 
 if __name__ == "__main__":
-    MainApp().run()        
+    MainApp().run()
