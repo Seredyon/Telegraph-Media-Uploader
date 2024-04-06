@@ -13,6 +13,9 @@ from kivy.core.clipboard import Clipboard
 from kivymd.app import MDApp
 from kivy.uix.boxlayout import BoxLayout
 import natsort
+from zipfile import ZipFile
+import tempfile
+import shutil
 def convert_file_to_image(file):
     ext = os.path.splitext(file)[1].lower()
     if ext not in [".png", ".gif", ".jpg", ".jpeg"]:
@@ -228,22 +231,22 @@ ScreenManager:
         ''')
         return screen
 
-    def on_upload_button_release(self, directory_path):
-        # Validate directory path
-        if not os.path.isdir(directory_path):
-            self.show_error_popup("Invalid Directory", "The directory path is invalid.")
-            return
+    def on_upload_button_release(self, path):
+        # Validate if the input is a directory or a ZIP file
+        if os.path.isdir(path):
+            self.start_upload(path)
+        elif os.path.isfile(path) and path.lower().endswith('.zip'):
+            temp_dir = tempfile.mkdtemp()
+            try:
+                with ZipFile(path, 'r') as zip_ref:
+                    zip_ref.extractall(temp_dir)
+                self.start_upload(temp_dir)
+            except Exception as e:
+                self.show_error_popup("ZIP Extraction Error", f"Error extracting ZIP file: {e}")
+                shutil.rmtree(temp_dir)  # Remove temp directory in case of error
+        else:
+            self.show_error_popup("Invalid Input", "Please select a valid directory or ZIP file.")
 
-        # Check if article title is provided
-        if not self.article_settings["title"]:
-            error_message = "Please enter the article title in the settings screen."
-            self.go_to_settings_screen()
-            self.root.get_screen('settings').ids.title_field.error = True
-            return
-
-        # Proceed to the upload stage
-        self.root.current = 'progress'
-        self.start_upload(directory_path)
 
     def start_upload(self, directory_path):
         # Validate directory path
