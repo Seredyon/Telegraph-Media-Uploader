@@ -1,8 +1,5 @@
 # Telegraph Media Uploader
 
-![image](https://github.com/Seredyon/Telegraph-Media-Uploader/assets/131982177/c9ee1fbd-8c02-47c7-8ab7-76abe459f6f1)
-
-
 This is a Kivy application that allows users to upload files to Telegraph, a platform for creating richly formatted posts. The application supports PNG, GIF, JPG, WEBM and JPEG files.
 
 ### Features
@@ -46,6 +43,12 @@ python main.py
 4. On the upload screen, enter the path to the directory containing the images you want to upload, then click “Upload”.
 5. The application will start uploading the images. You can see the progress on the progress screen.
 6. Once the upload is complete, the application will display the link to the uploaded article. You can copy the link by clicking the copy icon.
+
+## Screenshots
+### Android
+![image](https://github.com/Seredyon/Telegraph-Media-Uploader/assets/131982177/ae23d7d7-b982-4d60-b200-2e5f4e5fc1d5)
+### Windows
+![image](https://github.com/Seredyon/Telegraph-Media-Uploader/assets/131982177/d0042afb-2901-478e-b43e-de43663a7c15)
 
 ## Contributing
 
