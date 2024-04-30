@@ -51,7 +51,7 @@ python main.py
 
 ### Windows
 <div align="center">
-  <img src="https://github.com/Seredyon/Telegraph-Media-Uploader/assets/131982177/d0042afb-2901-478e-b43e-de43663a7c15" width="350" />
+  <img src="https://github.com/Seredyon/Telegraph-Media-Uploader/assets/131982177/d0042afb-2901-478e-b43e-de43663a7c15" width="400" />
 </div>
 
 ## Contributing
