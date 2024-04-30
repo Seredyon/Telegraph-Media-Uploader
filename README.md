@@ -47,12 +47,13 @@ python main.py
 ### Android
 <div align="center">
   <img src="https://github.com/Seredyon/Telegraph-Media-Uploader/assets/131982177/ae23d7d7-b982-4d60-b200-2e5f4e5fc1d5" width="350" />
-  <img src="https://github.com/Seredyon/Telegraph-Media-Uploader/assets/131982177/d0042afb-2901-478e-b43e-de43663a7c15" width="400" />
+  <img src="https://github.com/Seredyon/Telegraph-Media-Uploader/assets/131982177/511959f5-412a-47f3-8351-48c975f1017f" width="350" />
+  <img src="https://github.com/Seredyon/Telegraph-Media-Uploader/assets/131982177/33e169c5-9b61-40f9-9352-84682b6480e2" width="350" />
 </div>
 
 ### Windows
 <div align="center">
-  <img src="https://github.com/Seredyon/Telegraph-Media-Uploader/assets/131982177/d0042afb-2901-478e-b43e-de43663a7c15" width="400" />
+  <img src="https://github.com/Seredyon/Telegraph-Media-Uploader/assets/131982177/d0042afb-2901-478e-b43e-de43663a7c15" width="450" />
 </div>
 
 ## Contributing
