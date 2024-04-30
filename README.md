@@ -46,7 +46,7 @@ python main.py
 
 ## Screenshots
 ### Android
-![image](https://github.com/Seredyon/Telegraph-Media-Uploader/assets/131982177/ae23d7d7-b982-4d60-b200-2e5f4e5fc1d5)
+<img src="https://github.com/Seredyon/Telegraph-Media-Uploader/assets/131982177/ae23d7d7-b982-4d60-b200-2e5f4e5fc1d5" width="400" style="border: 1px solid #ddd;" />
 ### Windows
 ![image](https://github.com/Seredyon/Telegraph-Media-Uploader/assets/131982177/d0042afb-2901-478e-b43e-de43663a7c15)
 
