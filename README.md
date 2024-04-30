@@ -46,13 +46,14 @@ python main.py
 ## Screenshots
 ### Android
 <div align="center">
-  <img src="https://github.com/Seredyon/Telegraph-Media-Uploader/assets/131982177/ae23d7d7-b982-4d60-b200-2e5f4e5fc1d5" width="200" />
+  <img src="https://github.com/Seredyon/Telegraph-Media-Uploader/assets/131982177/ae23d7d7-b982-4d60-b200-2e5f4e5fc1d5" width="350" />
 </div>
 
 ### Windows
 <div align="center">
-  <img src="https://github.com/Seredyon/Telegraph-Media-Uploader/assets/131982177/d0042afb-2901-478e-b43e-de43663a7c15" width="200" />
+  <img src="https://github.com/Seredyon/Telegraph-Media-Uploader/assets/131982177/d0042afb-2901-478e-b43e-de43663a7c15" width="350" />
 </div>
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
