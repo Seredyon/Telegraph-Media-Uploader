@@ -67,7 +67,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 <h2 align="center">Contact me 📫</h2>
 
 <p align="center">
-  <a href="https://t.me/Ice_vol0w_Come">
+  <a href="https://t.me/geekgodness">
     <img src="https://img.shields.io/badge/telegram-black?style=for-the-badge&logo=telegram" alt="Telegram">
   </a>
 </p>
